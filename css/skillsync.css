@@ -1,0 +1,133 @@
+/* ============================================================
+   SkillSync AI — Global CSS Design System
+   White + Royal Blue Theme | Clean & Professional
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --brand-50:  #EFF6FF;
+  --brand-100: #DBEAFE;
+  --brand-200: #BFDBFE;
+  --brand-400: #60A5FA;
+  --brand-500: #3B82F6;
+  --brand-600: #2563EB;
+  --brand-700: #1D4ED8;
+  --brand-800: #1E3A8A;
+  --slate-50:  #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-400: #94A3B8;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #FFFFFF;
+  color: var(--slate-800);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: #BFDBFE; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2563EB; }
+
+/* Marquee / Scrolling Logos */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { display: flex; width: max-content; animation: marquee 22s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-wrapper { overflow: hidden; }
+
+/* Fade in upward animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease forwards; }
+
+/* Pulse dot for online status */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.pulse-dot { animation: pulse-dot 2s infinite; }
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -8px rgba(37,99,235,0.15);
+  border-color: #BFDBFE;
+}
+
+/* Smooth transitions */
+* { transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 150ms; transition-timing-function: ease-in-out; }
+
+/* FAQ Accordion slide */
+.faq-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-content.open { max-height: 400px; }
+
+/* Testimonial carousel */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.testimonial-active { animation: slideIn 0.4s ease forwards; }
+
+/* Typing cursor blink */
+@keyframes blink { 50% { opacity: 0; } }
+.cursor { animation: blink 1s step-end infinite; }
+
+/* Toast notification */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.toast-enter { animation: slideUpFade 0.3s ease; }
+
+/* Chat bubble */
+.bubble-self {
+  background: #2563EB;
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+}
+.bubble-other {
+  background: #F1F5F9;
+  color: #1E293B;
+  border-radius: 18px 18px 18px 4px;
+}
+
+/* Blue gradient background for hero */
+.hero-gradient {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 40%, #ffffff 80%);
+}
+
+/* Skill tag */
+.skill-tag {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+}
+
+/* Section pattern backgrounds */
+.bg-dots {
+  background-image: radial-gradient(circle, #DBEAFE 1px, transparent 1px);
+  background-size: 24px 24px;
+}
